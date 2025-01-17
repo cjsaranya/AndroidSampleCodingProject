@@ -1,10 +1,9 @@
 package com.example.codingtestsample.presentation.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.codingtestsample.data.ItemRepository
 import com.example.codingtestsample.domain.Item
+import com.example.codingtestsample.domain.usecase.FetchItemDetailsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -19,7 +18,10 @@ sealed class ItemListState {
 
 @HiltViewModel
 class ItemListViewModel @Inject constructor(
-    private val repository: ItemRepository) : ViewModel() {
+    private val fetchItemDetailsUseCase: FetchItemDetailsUseCase) : ViewModel() {
+
+    private val _items = MutableStateFlow<List<Item>>(emptyList())
+    val items: StateFlow<List<Item>> = _items
 
     private val _uiState = MutableStateFlow<ItemListState>(ItemListState.Loading)
     val uiState: StateFlow<ItemListState> = _uiState
@@ -31,11 +33,16 @@ class ItemListViewModel @Inject constructor(
     private fun fetchItems() {
         viewModelScope.launch {
             _uiState.value = try {
-                val items = repository.fetchItemDetails()
-                ItemListState.Success(items)
+                _items.value = fetchItemDetailsUseCase.invoke()
+                ItemListState.Success(_items.value)
             } catch (e: Exception) {
                 ItemListState.Error("Failed to fetch items")
             }
         }
     }
+    private fun fetchItems1() {
+        viewModelScope.launch {
+        }
+    }
+
 }

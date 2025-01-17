@@ -1,6 +1,6 @@
 package com.example.codingtestsample.presentation.viewmodel
 
-import com.example.codingtestsample.data.ItemRepository
+import com.example.codingtestsample.data.ItemDataRepository
 import com.example.codingtestsample.domain.Item
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -18,11 +18,11 @@ class ItemDetailsViewModelTest {
     val mainDispatcherRule = MainDispatcherRule()
 
     private lateinit var viewModel: ItemDetailsViewModel
-    private val repository: ItemRepository = mockk()
+    private val repository: ItemDataRepository = mockk()
 
     @Before
     fun setUp() {
-        viewModel = ItemDetailsViewModel(repository)
+     //   viewModel = ItemDetailsViewModel(repository)
     }
 
     @Test

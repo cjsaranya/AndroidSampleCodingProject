@@ -1,7 +1,7 @@
 package com.example.codingtestsample.domain
 
 import com.example.codingtestsample.data.remote.ApiService
-import com.example.codingtestsample.data.ItemRepository
+import com.example.codingtestsample.data.ItemDataRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -31,7 +31,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideItemRepository(apiService: ApiService): ItemRepository {
-        return ItemRepository(apiService)
+    fun provideItemRepository(apiService: ApiService): ItemDataRepository {
+        return ItemDataRepository(apiService)
     }
 }
