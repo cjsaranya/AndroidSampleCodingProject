@@ -2,8 +2,8 @@ package com.example.codingtestsample.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.codingtestsample.domain.Item
-import com.example.codingtestsample.domain.usecase.FetchItemDetailsUseCase
+import com.example.domain.data.Item
+import com.example.domain.usecase.FetchItemDetailsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -18,7 +18,8 @@ sealed class ItemListState {
 
 @HiltViewModel
 class ItemListViewModel @Inject constructor(
-    private val fetchItemDetailsUseCase: FetchItemDetailsUseCase) : ViewModel() {
+    private val fetchItemDetailsUseCase: FetchItemDetailsUseCase
+) : ViewModel() {
 
     private val _items = MutableStateFlow<List<Item>>(emptyList())
     val items: StateFlow<List<Item>> = _items

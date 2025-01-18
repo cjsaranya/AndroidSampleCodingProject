@@ -48,7 +48,7 @@ android {
 }
 
 dependencies {
-
+    implementation(project(":domain"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -61,12 +61,12 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose) // Hilt navigation for Compose
-    implementation(libs.hilt.android)
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson) // For Gson converter
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging) // For logging HTTP requests
     implementation(libs.androidx.navigation.compose)
+    implementation(project(":data"))
     kapt(libs.hilt.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

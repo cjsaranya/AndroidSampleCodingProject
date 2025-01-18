@@ -1,6 +1,6 @@
 package com.example.codingtestsample.presentation.state
 
-import com.example.codingtestsample.domain.Item
+import com.example.domain.data.Item
 
 sealed class ItemDetailsState {
     object Loading : ItemDetailsState()
