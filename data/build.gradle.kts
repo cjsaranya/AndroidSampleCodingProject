@@ -53,6 +53,11 @@ dependencies {
     implementation(libs.retrofit.gson) // For Gson converter
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging) // For logging HTTP requests
+    testImplementation(libs.coroutines.test)
+    testImplementation(libs.mockk)
+    testImplementation(libs.turbine)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.inline)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
