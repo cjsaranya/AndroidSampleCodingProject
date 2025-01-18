@@ -42,3 +42,6 @@ To get started with this project:
 ### Clone the Repository
 ```bash
 git clone https://github.com/cjsaranya/AndroidSampleCodingProject.git
+
+![ListDetailScreen](https://github.com/user-attachments/assets/65df59b7-cb5d-47ad-bbda-7a46073b5a07)
+![ListScreen](https://github.com/user-attachments/assets/8ef09f4a-969a-44e5-abbd-ee1b402a6bc9)
