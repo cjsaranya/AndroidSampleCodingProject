@@ -1,3 +1,4 @@
+
 # AndroidSampleCodingProject
 
 ## Description
@@ -39,9 +40,10 @@ Before running the project, ensure you have the following installed:
 
 To get started with this project:
 
+### Screenshots
+![ListScreen](https://github.com/user-attachments/assets/70846a6e-d003-4967-97d1-10305b817520)
+![ListDetailScreen](https://github.com/user-attachments/assets/121e7030-3429-4cf3-af93-b527ad8c1a3a)
+
 ### Clone the Repository
 ```bash
 git clone https://github.com/cjsaranya/AndroidSampleCodingProject.git
-
-![ListDetailScreen](https://github.com/user-attachments/assets/65df59b7-cb5d-47ad-bbda-7a46073b5a07)
-![ListScreen](https://github.com/user-attachments/assets/8ef09f4a-969a-44e5-abbd-ee1b402a6bc9)
